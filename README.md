@@ -33,3 +33,7 @@ npm i morgan
 
 https://stackoverflow.com/questions/23259168/what-are-express-json-and-express-urlencoded
 https://stackoverflow.com/questions/29960764/what-does-extended-mean-in-express-4-0
+
+https://www.npmjs.com/package/compose-middleware
+
+npm i cors
