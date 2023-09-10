@@ -28,3 +28,7 @@ Add script
 npm i @prisma/client
 
 npx prisma migrate dev --name init
+
+npm i morgan
+
+https://stackoverflow.com/questions/23259168/what-are-express-json-and-express-urlencoded
