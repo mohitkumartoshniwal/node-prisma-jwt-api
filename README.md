@@ -37,3 +37,10 @@ https://stackoverflow.com/questions/29960764/what-does-extended-mean-in-express-
 https://www.npmjs.com/package/compose-middleware
 
 npm i cors
+
+npm i jsonwebtoken bcrypt dotenv
+
+import \* as dotenv from "dotenv";
+dotenv.config()
+
+npx prisma studio
