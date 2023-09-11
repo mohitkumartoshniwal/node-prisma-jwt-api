@@ -50,3 +50,9 @@ npm i express-validator
 npm i lodash.merge
 
 STAGE=production npm run dev
+
+npm i supertest @types/supertest jest @types/jest ts-jest
+
+npx ts-jest config:init
+
+npm test

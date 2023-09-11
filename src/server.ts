@@ -28,8 +28,12 @@ app.get('/', (req, res, next) => {
     //     throw new Error('heelo')
     // }, 1000)
     setTimeout(() => {
-        next(new Error('heelo'))
+        next(new Error('hello'))
     }, 1000)
+})
+
+app.get('/dummy', (req, res) => {
+    res.json({ message: 'Hello' })
 })
 
 app.use('/api', protect, router)
