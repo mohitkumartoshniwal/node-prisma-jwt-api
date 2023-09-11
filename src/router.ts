@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { body } from "express-validator";
 import { handleInputErrors } from "./modules/middleware";
+import { createProduct, deleteProduct, getOneProduct, getProducts, updateProduct } from "./handlers/product";
 
 
 const router = Router()
@@ -8,14 +9,11 @@ const router = Router()
 
 // Product
 
-router.get('/product', (req, res) => {
-    res.json({ message: 'product' })
-})
-router.get('/product/:id', () => { })
-router.post('/product', [body('name').exists().isString(), body('description').optional().isString()], handleInputErrors, (req, res) => {
-
-})
-router.put('/product/:id', [body('name').exists().isString(), body('description').optional().isString()], handleInputErrors, () => { })
-router.delete('/product/:id', () => { })
+router.get('/product', getProducts)
+router.get('/product/:id', getOneProduct)
+// .optional().
+router.post('/product', [body('name').exists().isString(), body('description').isString()], handleInputErrors, createProduct)
+router.put('/product/:id', [body('name').exists().isString(), body('description').isString()], handleInputErrors, updateProduct)
+router.delete('/product/:id', deleteProduct)
 
 export default router
