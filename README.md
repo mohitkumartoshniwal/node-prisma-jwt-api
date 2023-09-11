@@ -44,3 +44,5 @@ import \* as dotenv from "dotenv";
 dotenv.config()
 
 npx prisma studio
+
+npm i express-validator
