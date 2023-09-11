@@ -22,14 +22,18 @@ app.use(express.urlencoded({ extended: true }))
 
 // app.use(customLogger('custom Logger'))
 
+app.get('/', (req, res) => {
+    throw new Error('heelo')
+})
 
 app.use('/api', protect, router)
 app.post('/user', createNewUser)
 app.post('/sign-in', signIn)
 
-
-app.get('/', (req, res) => {
-    res.json({ messasge: 'hello world' })
+app.use((err, req, res, next) => {
+    console.error(err)
+    res.json({ message: 'OOps there was an error' })
 })
+
 
 export default app
