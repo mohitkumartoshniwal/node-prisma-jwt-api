@@ -16,4 +16,9 @@ router.post('/product', [body('name').exists().isString(), body('description').i
 router.put('/product/:id', [body('name').exists().isString(), body('description').isString()], handleInputErrors, updateProduct)
 router.delete('/product/:id', deleteProduct)
 
+router.use((err, req, res, next) => {
+    console.error(err)
+    res.json({ message: 'in router handler' })
+})
+
 export default router
