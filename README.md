@@ -51,8 +51,26 @@ npm i lodash.merge
 
 STAGE=production npm run dev
 
-npm i supertest @types/supertest jest @types/jest ts-jest
+npm i supertest @types/supertest jest @types/jest ts-jest -D
 
 npx ts-jest config:init
 
 npm test
+
+"scripts": {
+"build": "tsc -p tsconfig.json",
+"start": "node dist/index.js",
+}
+
+{
+"compilerOptions": {
+"sourceMap": true,
+"outDir": "./dist",
+"rootDir": "./src",
+"strict": false,
+"lib": ["esnext"],
+"esModuleInterop": true,
+"declaration": true
+},
+"include": ["src/**/*.ts"]
+}
