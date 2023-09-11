@@ -25,4 +25,6 @@ model Product {
   description String
   belongsTo   User     @relation(fields: [belongsToId], references: [id])
   belongsToId String
+
+  @@unique([id, belongsToId])
 }
