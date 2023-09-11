@@ -22,8 +22,14 @@ app.use(express.urlencoded({ extended: true }))
 
 // app.use(customLogger('custom Logger'))
 
-app.get('/', (req, res) => {
-    throw new Error('heelo')
+app.get('/', (req, res, next) => {
+    // throw new Error('heelo')
+    // setTimeout(() => {
+    //     throw new Error('heelo')
+    // }, 1000)
+    setTimeout(() => {
+        next(new Error('heelo'))
+    }, 1000)
 })
 
 app.use('/api', protect, router)
