@@ -46,3 +46,7 @@ dotenv.config()
 npx prisma studio
 
 npm i express-validator
+
+npm i lodash.merge
+
+STAGE=production npm run dev
