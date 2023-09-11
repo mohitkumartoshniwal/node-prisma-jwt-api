@@ -37,8 +37,16 @@ app.post('/user', createNewUser)
 app.post('/sign-in', signIn)
 
 app.use((err, req, res, next) => {
-    console.error(err)
-    res.json({ message: 'OOps there was an error' })
+    // console.error(err)
+    // res.json({ message: 'OOps there was an error' })
+
+    if (err.type === 'auth') {
+        res.status(401).json({ message: "Un Authorized" })
+    } else if (err.type === 'input') {
+        res.status(400).json({ message: "Invalid Input" })
+    } else {
+        res.status(500).json({ message: 'Server Error' })
+    }
 })
 
 
