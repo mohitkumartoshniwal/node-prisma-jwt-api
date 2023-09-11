@@ -1,8 +1,8 @@
-// describe("user handler", () => {
-//     it("should do a thing", async () => {
-//         expect("something").toBe("something");
-//     });
-// });
+describe("user handler", () => {
+    it("should do a thing", async () => {
+        expect("something").toBe("something");
+    });
+});
 
 
 // // DB is not being mocked
